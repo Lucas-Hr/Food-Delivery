@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const Card = () => {
+const CardTeam = () => {
 
   return (
     <>
@@ -9,4 +9,4 @@ const Card = () => {
   )
 }
 
-export default Card
+export default CardTeam

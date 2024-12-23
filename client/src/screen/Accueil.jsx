@@ -1,15 +1,15 @@
 import { useState } from 'react'
-import NavigationBar from '../component/NavigationBar'
+import NavigationBar from '../component/NavigationBar';
+import Welcome from '../component/Welcome';
+import OrderStep from '../component/OrderStep';
 
 const Accueil = () => {
 
   return (
     <>
-      <NavigationBar />
-      <section className='d-flex justify-content-between align-items-center'>
-        <div></div>
-        <div></div>
-      </section>
+      <NavigationBar  />
+      <Welcome />
+      <OrderStep />
     </>
   )
 }

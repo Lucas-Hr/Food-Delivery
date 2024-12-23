@@ -18,7 +18,7 @@ const NavigationBar = () => {
       {/* <Link to="/">Accueil</Link>
       <Link to="/menu" className='cursor-pointer'>Menu</Link>
       <Link to="/cart" className='cursor-pointer'>Cart</Link>      */}
-      <Navbar className="w-100 justify-content-between">
+      <Navbar className="w-100 justify-content-between" style={{padding : "0px 200px"}}>
         <Navbar.Brand>
           <img
             alt=""
@@ -32,7 +32,6 @@ const NavigationBar = () => {
         <Nav className="justify-content-end align-items-center item position-relative">
           <motion.img 
             initial={{left : 20}}
-            
             src={Active}
             alt=""
             className='position-absolute' 
