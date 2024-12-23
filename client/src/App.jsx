@@ -4,11 +4,13 @@ import Accueil from './screen/Accueil'
 import Menu from './screen/Menu'
 import Cart from './screen/Cart'
 import Dashboard from './screen/Dashboard'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
+        
         <Route path='/' element={<Accueil />}></Route>
         <Route path='/menu' element={<Menu />}></Route>
         <Route path='/cart' element={<Cart />}></Route>
