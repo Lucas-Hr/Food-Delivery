@@ -2,6 +2,8 @@ import { useState } from 'react'
 import NavigationBar from '../component/NavigationBar';
 import Welcome from '../component/Welcome';
 import OrderStep from '../component/OrderStep';
+import Team from '../component/Team';
+import BestSeller from '../component/BestSeller';
 
 const Accueil = () => {
 
@@ -10,6 +12,8 @@ const Accueil = () => {
       <NavigationBar  />
       <Welcome />
       <OrderStep />
+      <Team />
+      <BestSeller />
     </>
   )
 }
