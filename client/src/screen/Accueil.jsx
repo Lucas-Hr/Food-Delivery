@@ -1,13 +1,21 @@
 import { useState } from 'react'
-import Navbar from '../component/Navbar'
+import NavigationBar from '../component/NavigationBar';
+import Welcome from '../component/Welcome';
+import OrderStep from '../component/OrderStep';
+import Team from '../component/Team';
+import BestSeller from '../component/BestSeller';
 
 const Accueil = () => {
 
   return (
     <>
-      <Navbar />
+      <NavigationBar  />
+      <Welcome />
+      <OrderStep />
+      <Team />
+      <BestSeller />
     </>
   )
 }
 
-export default Accueil
+export default Accueil;

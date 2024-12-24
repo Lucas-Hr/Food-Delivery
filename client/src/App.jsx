@@ -4,6 +4,7 @@ import Accueil from './screen/Accueil'
 import Menu from './screen/Menu'
 import Cart from './screen/Cart'
 import Dashboard from './screen/Dashboard'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
