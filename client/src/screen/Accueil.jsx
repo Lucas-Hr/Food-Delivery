@@ -4,7 +4,7 @@ import Welcome from '../component/Welcome';
 import OrderStep from '../component/OrderStep';
 import Team from '../component/Team';
 import BestSeller from '../component/BestSeller';
-
+import Footer from '../component/Footer';
 const Accueil = () => {
 
   return (
@@ -14,6 +14,7 @@ const Accueil = () => {
       <OrderStep />
       <Team />
       <BestSeller />
+      <Footer />
     </>
   )
 }
