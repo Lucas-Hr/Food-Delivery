@@ -10,11 +10,19 @@ import getDelivered from '../assets/img/getDelivered.png'
 import enjoyMeal from '../assets/img/enjoyMeal.png'
 import StepOne from './StepOne'
 import StepTwo from './StepTwo'
-
+import { motion } from 'framer-motion'
 function OrderStep() {
   return (
     <>
-        <section className='vh-100 py-5' style={{backgroundColor : "#F9F9F9",padding : "0px 200px"}} >
+        <motion.section
+         initial={{opacity: 0, y: 200}}
+         whileInView={{opacity: 1, y: 0}}
+         viewport={{once: true}}
+         transition={{
+           duration: 1,
+         }}
+        className='vh-100 py-5' style={{backgroundColor : "#F9F9F9",padding : "0px 200px"}}
+        >
             <div>
                 <h1 className='text-center'>Easy Order Step</h1>
                 <hr className='w-25 justify-content-center' style={{color : "#FF8000"}}/>
@@ -26,7 +34,7 @@ function OrderStep() {
                 <StepTwo className='w-100' step={fourthStep} img={enjoyMeal} text={'Enjoy your meal'}/>
             </div>
            
-        </section>
+        </motion.section>
     </>
   )
 }
