@@ -5,15 +5,15 @@ import Arrow from '../assets/img/arrow.png'
 
 function FoodList() {
   return (
-    <section className='py-5' style={{padding : "0px 200px"}}>
+    <section className='px-52 py-36'>
         <select name="" id="" >
             <option value="">Name</option>
             <option value="">Price</option>
         </select>
-        <div className='d-flex justify-content-between vh-100'  >
+        <div className='d-flex justify-content-between vh-100'>
             <div>
                 <input type="text" name="" id="" placeholder='Search food...'/>
-                <h2 className='mt-5' style={{borderLeft : "4px solid #FF8000", paddingLeft : "10px"}}>Categories</h2>
+                <h2 className='mt-5 text-3xl' style={{borderLeft : "4px solid #FF8000", paddingLeft : "10px"}}>Categories</h2>
                 <div>
                     <div className='d-flex my-4'>
                         <img src={Arrow} style={{width : 15, height : 20}} className='me-2' alt="" />

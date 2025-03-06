@@ -7,7 +7,7 @@ import fourthOne from '../assets/img/fourthOne.jpg';
 
 const Team = () => {
     return (
-        <section className='py-5 vh-100'>
+        <section className='py-5 vh-100 px-52'>
             <div className='container'>
                 <h1 className='text-center mt-5 mb-5'>Our Team</h1>
                

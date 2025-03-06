@@ -3,11 +3,11 @@ import Trash from '../assets/img/trash.png'
 
 function CartElement({img, name, ingredients, price, quantity}) {
   return (
-    <div className="d-flex">
+    <div className="flex">
         <div>
             <img src={img} alt="" />
         </div>
-        <div className='d-flex justify-content-evenly align-items-center'>
+        <div className='flex justify-evenly items-center'>
             <div>
                 <h3>{name}</h3>
                 <h5>{ingredients}</h5>
@@ -15,7 +15,7 @@ function CartElement({img, name, ingredients, price, quantity}) {
             <div>
                 <h3>{price}</h3>
             </div>
-            <div className='d-flex justify-content-between align-items-center'>
+            <div className='flex justify-between items-center'>
                 <p>-</p>
                 <p>{quantity}</p>
                 <p>+</p>

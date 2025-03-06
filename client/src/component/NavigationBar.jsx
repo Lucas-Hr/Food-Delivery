@@ -18,17 +18,14 @@ const NavigationBar = () => {
       {/* <Link to="/">Accueil</Link>
       <Link to="/menu" className='cursor-pointer'>Menu</Link>
       <Link to="/cart" className='cursor-pointer'>Cart</Link>      */}
-      <Navbar className="w-100 justify-content-between" style={{padding : "20px 200px"}}>
+      <Navbar className="w-100 justify-content-between fixed shadow top-0 bg-white z-1 px-52 py-8" >
         <Navbar.Brand>
           <img
             alt=""
             src={Logo}
-            width="30"
-            height="30"
-            className="d-inline-block align-top w-100"
+            className="d-inline-block align-top w-75"
           />
         </Navbar.Brand>
-
         <Nav className="justify-content-end align-items-center item position-relative">
           <motion.img 
             initial={{left : 20}}

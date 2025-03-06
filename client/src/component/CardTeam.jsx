@@ -12,9 +12,9 @@ const CardTeam = ({img, nom, poste}) => {
   return (
     <>
       <div className='card-team'>
-        <img src={img} className='rounded-circle img-fluid mx-auto d-block object-fit-cover' style={{ width : 200, height: 200}} />
-        <h3 className='card-title text-center mt-3'>{nom}</h3>
-        <h5 className='card-subtitle text-center mt-2'>{poste}</h5>
+        <img src={img} className='rounded-circle img-fluid mx-auto d-block object-fit-cover w-48 h-48'  />
+        <h3 className='card-title text-center mt-3 text-3xl font-semibold'>{nom}</h3>
+        <h5 className='card-subtitle text-center mt-2 text-2xl'>{poste}</h5>
         <div className='d-flex justify-content-between mt-5'>
           <Link to='#'><img src={Facebook} /></Link>
           <Link to='#'><img src={Twitter} /></Link>
