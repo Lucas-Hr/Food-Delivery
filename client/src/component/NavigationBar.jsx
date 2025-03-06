@@ -9,10 +9,10 @@ import Login from '../assets/img/login.png'
 import Active from '../assets/img/activeNavBar.png'
 import './../assets/style/navbar.css'
 import {motion, AnimatePresence} from 'framer-motion'
- 
 
 const NavigationBar = () => {
-
+  const [position, setPosition] = useState(0)
+  
   return (
     <>
       {/* <Link to="/">Accueil</Link>
@@ -23,24 +23,26 @@ const NavigationBar = () => {
           <img
             alt=""
             src={Logo}
-            className="d-inline-block align-top w-75"
+            className="d-inline-block align-top w-[200px]"
           />
         </Navbar.Brand>
         <Nav className="justify-content-end align-items-center item position-relative">
-          <motion.img 
-            initial={{left : 20}}
+          <motion.img
+            initial={{x : 0}}
+            animate={{x : position}}
+            transition={{ duration : 0.5 }}
             src={Active}
             alt=""
-            className='position-absolute' 
+            className='position-absolute left-6' 
             style={{width : 10, height: 10, top : 50}}
           />
-          <Nav.Item>
-            <Link className="link cursor-pointer position-relative" to="/">
+          <Nav.Item >
+            <Link onClick={() => setPosition(0)} className="link cursor-pointer position-relative" to="/">
               Home
             </Link>
           </Nav.Item>
-          <Nav.Item className='position-relative'>
-            <Link className="link cursor-pointer position-relative" to="/menu">
+          <Nav.Item className='position-relative' >
+            <Link onClick={() => setPosition(100)} className="link cursor-pointer position-relative" to="/menu">
              Menu
             </Link>
           </Nav.Item>

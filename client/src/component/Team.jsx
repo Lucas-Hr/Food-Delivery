@@ -4,10 +4,17 @@ import firstOne from '../assets/img/firstOne.jpg';
 import secondOne from '../assets/img/secondOne.jpg';
 import thirdOne from '../assets/img/thirdOne.jpg';
 import fourthOne from '../assets/img/fourthOne.jpg';
-
+import { motion } from 'framer-motion';
 const Team = () => {
     return (
-        <section className='py-5 vh-100 px-52'>
+        <motion.section
+        initial={{opacity: 0, y: 200}}
+         whileInView={{opacity: 1, y: 0}}
+         viewport={{once: true}}
+         transition={{
+           duration: 1,
+         }}
+        className='py-5 vh-100 px-52'>
             <div className='container'>
                 <h1 className='text-center mt-5 mb-5'>Our Team</h1>
                
@@ -18,7 +25,7 @@ const Team = () => {
                     <CardTeam img={fourthOne} nom='Mike Ross' poste='Developer' />
                 </div>
             </div>
-        </section>
+        </motion.section>
     )
 };
 

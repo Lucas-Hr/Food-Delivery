@@ -1,9 +1,17 @@
 import React from 'react'
 import HomePng from '../assets/img/home.png'
+import { motion } from 'framer-motion'
 
 const Welcome = () => {
   return (
-    <section className='d-flex justify-content-between align-items-center w-100 py-32 px-52'>
+    <motion.section 
+    initial={{opacity: 0, y: 200}}
+    animate={{opacity: 1, y: 0}}
+    transition={{
+      duration: 1,
+    }}
+    className='d-flex justify-content-between align-items-center w-100 py-32 px-52'
+    >
         <div className='w-50'>
           <h1>
             Enjoy Our <br /> <span class='font-bold'>Delicious Meal</span>
@@ -16,7 +24,7 @@ const Welcome = () => {
         <div className='w-50'>
           <img style={{width: '100%'}} src={HomePng} alt="" />
         </div>
-      </section>
+      </motion.section>
   )
 }
 
