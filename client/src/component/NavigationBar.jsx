@@ -12,13 +12,13 @@ import {motion, AnimatePresence} from 'framer-motion'
  
 
 const NavigationBar = () => {
-  const [state, setState] = useState(false)
+
   return (
     <>
       {/* <Link to="/">Accueil</Link>
       <Link to="/menu" className='cursor-pointer'>Menu</Link>
       <Link to="/cart" className='cursor-pointer'>Cart</Link>      */}
-      <Navbar className="w-100 justify-content-between" style={{padding : "0px 200px"}}>
+      <Navbar className="w-100 justify-content-between" style={{padding : "20px 200px"}}>
         <Navbar.Brand>
           <img
             alt=""
