@@ -5,8 +5,47 @@ import Mac from '../assets/img/mac.jpg'
 import Sushi from '../assets/img/sushi.jpg'
 import Chicken from '../assets/img/chicken.jpg'
 import { motion } from 'framer-motion'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import {Pagination , Autoplay } from 'swiper/modules'
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/pagination';
 
 function BestSeller() {
+    const food = [
+        {
+            img : Lasagna,
+            title : "Lasagna",
+            ingredients : "Tomato, Cheese, Olive",
+            prix : "100"
+        },
+        {
+            img : Mac,
+            title : "Lasagna",
+            ingredients : "Tomato, Cheese, Olive",
+            prix : "100"
+        },
+        {
+            img : Sushi,
+            title : "Lasagna",
+            ingredients : "Tomato, Cheese, Olive",
+            prix : "100"
+        },
+        {
+            img : Chicken,
+            title : "Lasagna",
+            ingredients : "Tomato, Cheese, Olive",
+            prix : "100"
+        },
+        {
+            img : Lasagna,
+            title : "Lasagna",
+            ingredients : "Tomato, Cheese, Olive",
+            prix : "100"
+        },
+
+    ]
+
     return (
     <motion.section 
         initial={{opacity: 0, y: 200}}
@@ -15,16 +54,26 @@ function BestSeller() {
         transition={{
            duration: 1,
          }}
-    className='py-5 vh-100' style={{backgroundColor : "#F9F9F9",padding : "0px 200px"}}>
+        className='py-5 vh-100' style={{backgroundColor : "#F9F9F9",padding : "0px 200px"}}>
         <div className='container'>
             <h1 className='text-center mt-5 mb-5'>Our Best Seller</h1>
             
-            <div className='d-flex justify-content-between pt-5'>
-                <CardBestSeller img={Lasagna} title='Sushi' ingredients='Tomato, Cheese, Olive' prix='100' />
-                <CardBestSeller img={Sushi} title='Pizza' ingredients='Tomato, Cheese, Olive' prix='100' />
-                <CardBestSeller img={Chicken} title='Pizza' ingredients='Tomato, Cheese, Olive' prix='100' />
-                <CardBestSeller img={Mac} title='Pizza' ingredients='Tomato, Cheese, Olive' prix='100' />
-            </div>
+            <Swiper  
+            modules={[Autoplay, Pagination]}
+            spaceBetween={50}
+            slidesPerView={3} 
+            pagination={{ clickable: true }}
+            autoplay
+            className='z-1 cursor-grab'
+            >
+            {food.map((f, index) => {
+                return (
+                    <SwiperSlide key={index}>
+                        <CardBestSeller img={f.img} title={f.title} ingredients={f.ingredients} prix={f.prix}/>
+                    </SwiperSlide>
+                )
+            })}
+            </Swiper>
         </div>
     </motion.section>
     )

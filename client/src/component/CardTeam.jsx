@@ -16,7 +16,7 @@ const CardTeam = ({img, nom, poste}) => {
         <h3 className='card-title text-center mt-3 text-3xl font-semibold'>{nom}</h3>
         <h5 className='card-subtitle text-center mt-2 text-2xl'>{poste}</h5>
         <div className='d-flex justify-content-between mt-5'>
-          <Link to='#'><img src={Facebook} /></Link>
+          <Link to='#'><img src={Facebook} className='hover:fill-[#FF8000]' /></Link>
           <Link to='#'><img src={Twitter} /></Link>
           <Link to='#'><img src={Instagram} /></Link>
           <Link to='#'><img src={LinkedIn} /></Link>

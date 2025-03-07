@@ -18,7 +18,7 @@ const NavigationBar = () => {
       {/* <Link to="/">Accueil</Link>
       <Link to="/menu" className='cursor-pointer'>Menu</Link>
       <Link to="/cart" className='cursor-pointer'>Cart</Link>      */}
-      <Navbar className="w-100 justify-content-between fixed shadow top-0 bg-white z-1 px-52 py-8" >
+      <Navbar className="w-100 justify-content-between fixed shadow top-0 bg-white z-2 px-52 py-8" >
         <Navbar.Brand>
           <img
             alt=""
@@ -37,12 +37,12 @@ const NavigationBar = () => {
             style={{width : 10, height: 10, top : 50}}
           />
           <Nav.Item >
-            <Link onClick={() => setPosition(0)} className="link cursor-pointer position-relative" to="/">
+            <Link onClick={() => setPosition(0)} className="link cursor-pointer position-relative  hover:text-black" to="/">
               Home
             </Link>
           </Nav.Item>
           <Nav.Item className='position-relative' >
-            <Link onClick={() => setPosition(100)} className="link cursor-pointer position-relative" to="/menu">
+            <Link onClick={() => setPosition(100)} className="link cursor-pointer position-relative hover:text-black" to="/menu">
              Menu
             </Link>
           </Nav.Item>
