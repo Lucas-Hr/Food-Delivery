@@ -42,7 +42,7 @@ const NavigationBar = () => {
             </Link>
           </Nav.Item>
           <Nav.Item className='position-relative' >
-            <Link onClick={() => setPosition(100)} className="link cursor-pointer position-relative hover:text-black" to="/menu">
+            <Link onClick={() => setPosition(90)} className="link cursor-pointer position-relative hover:text-black" to="/menu">
              Menu
             </Link>
           </Nav.Item>

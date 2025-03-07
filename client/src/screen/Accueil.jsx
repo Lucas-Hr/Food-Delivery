@@ -9,7 +9,7 @@ const Accueil = () => {
 
   return (
     <>
-      <NavigationBar  />
+      {/* <NavigationBar  /> */}
       <Welcome />
       <OrderStep />
       <Team />
