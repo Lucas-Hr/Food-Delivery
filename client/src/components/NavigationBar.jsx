@@ -15,9 +15,6 @@ const NavigationBar = () => {
   
   return (
     <>
-      {/* <Link to="/">Accueil</Link>
-      <Link to="/menu" className='cursor-pointer'>Menu</Link>
-      <Link to="/cart" className='cursor-pointer'>Cart</Link>      */}
       <Navbar className="w-100 justify-content-between fixed shadow top-0 bg-white z-2 px-52 py-8" >
         <Navbar.Brand>
           <img

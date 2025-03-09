@@ -1,12 +1,11 @@
 import { useState } from 'react'
-import Navigationbar from '../component/NavigationBar'
-import FoodList from '../component/FoodList'
-import Footer from '../component/Footer'
+import Navigationbar from '../components/NavigationBar'
+import FoodList from '../components/FoodList'
+import Footer from '../components/Footer'
 const Menu = () => {
 
   return (
     <>
-      {/* <Navigationbar /> */}
       <FoodList />
       <Footer />
     </>

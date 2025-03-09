@@ -24,7 +24,6 @@ const Footer = () => {
             <img src={Instagram} style={{width : 30, height: 30}} className="me-3 cursor-pointer"alt="" srcset="" />
             <img src={Twitter} style={{width : 30, height: 30}} className="me-3 cursor-pointer"alt="" srcset="" />
             <img src={LinkedIn} style={{width : 30, height: 30}} className="me-3 cursor-pointer"alt="" srcset="" />
-            {/* <Facebook width={50} height={50}/> */}
           </div>
         </div>
 
