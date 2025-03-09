@@ -8,10 +8,10 @@ const CardBestSeller = ({img, title, ingredients, prix}) => {
 
   return (
     <>
-      <div className="card w-[250px] shadow-sm mb-5  cursor-pointer overflow-hidden" 
+      <div className="card w-[250px] shadow-sm mb-5 cursor-pointer overflow-hidden" 
       onMouseEnter={() => setIsVisible(true)}
       onMouseLeave={() => setIsVisible(false)}
-    >
+      >
         {
           isVisible &&
             <motion.button 
