@@ -7,7 +7,7 @@ const Cart = () => {
   return (
     <>
       <CartList />
-      <Payment />
+      <Payment total={10}/>
       <Footer />
     </>
   )
