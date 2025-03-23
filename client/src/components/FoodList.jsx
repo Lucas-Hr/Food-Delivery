@@ -9,8 +9,9 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 
 function FoodList() {
-    const [categorie, setCategorie] = useState('All')
-    const categories = ['All','Asian Food','Malagasy Food', 'Fast Food' , 'Korean Food', 'Cocktails', 'Cake']
+    const [categorie, setCategorie] = useState('All');
+    const [search, setSearch] = useState('');
+    const categories = ['All','Asian Food','Malagasy Food', 'Fast Food' , 'Korean Food', 'Cocktails', 'Cake'];
     const food = [
             {
                 img : Lasagna,
@@ -56,7 +57,7 @@ function FoodList() {
             },
             {
                 img : Lasagna,
-                title : "Lasagna",
+                title : "Bolognaise",
                 ingredients : "Tomato, Cheese, Olive",
                 prix : "100",
                 categorie : "Malagasy Food"
@@ -70,7 +71,7 @@ function FoodList() {
             },
             {
                 img : Lasagna,
-                title : "Lasagna",
+                title : "Mac",
                 ingredients : "Tomato, Cheese, Olive",
                 prix : "100",
                 categorie : "Malagasy Food" 
@@ -117,7 +118,14 @@ function FoodList() {
                 animate={{opacity : 1, x:0}}
                 transition={{duration : 1}}
             >
-                <input className="bg-[#ffff] border-2 rounded-md py-1 px-2 shadow-sm focus:outline-none" type="text" name="" id="" placeholder='Search food...'/>
+                <input 
+                    className="bg-[#ffff] border-2 rounded-md py-1 px-2 shadow-sm focus:outline-none"
+                    type="text" 
+                    name="" 
+                    id="" 
+                    placeholder='Search food...'
+                    onChange={(e) => setSearch(e.target.value)}
+                />
                 <h2 className='mt-4 text-3xl' style={{borderLeft : "4px solid #FF8000", paddingLeft : "10px"}}>Categories</h2>
                 <div>
                     {categories.map((c, index) => {
@@ -141,8 +149,35 @@ function FoodList() {
                 initial={{opacity : 0, x : 100}}
                 animate={{opacity : 1, x:0}}
                 transition={{duration : 1}}
-                className='flex flex-wrap justify-between w-full ms-5 overflow-scroll'>
-                {food.filter(f => f.categorie == categorie).map((f, index) => {
+                className='flex flex-wrap justify-between w-full ms-5 overflow-scroll'
+            >
+                {categorie === 'All' ? 
+                
+                food.filter((f) => {
+                    return search.toLowerCase() === ""
+                        ? f
+                        : f.title.toLowerCase().includes(search);
+                    })
+                    .map((f, index) => {
+                    return (
+                        <motion.div
+                            initial={{opacity : 0}}
+                            animate={{opacity : 1}}
+                            transition={{duration : 1}}
+                        >
+                            <CardBestSeller key={index} img={f.img} title={f.title} ingredients={f.ingredients} prix={f.prix}/>
+                        </motion.div>
+                    )
+                }) : 
+                
+                food
+                .filter((f) => f.categorie === categorie)
+                .filter((f) => {
+                    return search.toLowerCase() === ""
+                        ? f
+                        : f.title.toLowerCase().includes(search);
+                    })
+                .map((f, index) => {
                     return (
                         <motion.div
                             initial={{opacity : 0}}
