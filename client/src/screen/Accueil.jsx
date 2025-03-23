@@ -1,15 +1,14 @@
 import { useState } from 'react'
-import NavigationBar from '../component/NavigationBar';
-import Welcome from '../component/Welcome';
-import OrderStep from '../component/OrderStep';
-import Team from '../component/Team';
-import BestSeller from '../component/BestSeller';
-import Footer from '../component/Footer';
+import NavigationBar from '../components/NavigationBar';
+import Welcome from '../components/Welcome';
+import OrderStep from '../components/OrderStep';
+import Team from '../components/Team';
+import BestSeller from '../components/BestSeller';
+import Footer from '../components/Footer';
 const Accueil = () => {
 
   return (
     <>
-      <NavigationBar  />
       <Welcome />
       <OrderStep />
       <Team />

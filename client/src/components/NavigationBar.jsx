@@ -15,10 +15,7 @@ const NavigationBar = () => {
   
   return (
     <>
-      {/* <Link to="/">Accueil</Link>
-      <Link to="/menu" className='cursor-pointer'>Menu</Link>
-      <Link to="/cart" className='cursor-pointer'>Cart</Link>      */}
-      <Navbar className="w-100 justify-content-between fixed shadow top-0 bg-white z-2 px-52 py-8" >
+      <Navbar className="w-100 justify-content-between fixed shadow top-0 bg-white z-3 px-52 py-8" >
         <Navbar.Brand>
           <img
             alt=""
@@ -42,7 +39,7 @@ const NavigationBar = () => {
             </Link>
           </Nav.Item>
           <Nav.Item className='position-relative' >
-            <Link onClick={() => setPosition(100)} className="link cursor-pointer position-relative hover:text-black" to="/menu">
+            <Link onClick={() => setPosition(90)} className="link cursor-pointer position-relative hover:text-black" to="/menu">
              Menu
             </Link>
           </Nav.Item>
@@ -51,7 +48,11 @@ const NavigationBar = () => {
             <Nav.Link className='link'> Login </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link ><Link to="/cart" className='cursor-pointer '><img style={{width : 30, height : 30}} src={Cart} alt="" /></Link></Nav.Link>
+            <Nav.Link >
+              <Link to="/cart" className='cursor-pointer' onClick={() => setPosition(305)}>
+                <img style={{width : 30, height : 30}} src={Cart} alt="" />
+              </Link>
+            </Nav.Link>
           </Nav.Item>
         </Nav>
       </Navbar> 

@@ -1,15 +1,14 @@
-import { useState } from 'react'
-import Navbar from '../component/NavigationBar'
+import Footer from '../components/Footer'
+import CartList from '../components/CartList'
+import Payment from '../components/Payment'
 
 const Cart = () => {
 
   return (
     <>
-      <Navbar />
-      <h1 className='text-center fw-semibold mt-5'>Your Cart</h1>
-      <select name="" id="">
-        <option value="">Name</option>
-      </select>
+      <CartList />
+      <Payment total={10}/>
+      <Footer />
     </>
   )
 }
