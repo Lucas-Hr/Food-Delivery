@@ -26,48 +26,6 @@ const CartList = () => {
         price : "100",
         quantity : 1
     },
-    {
-        img : Lasagna,
-        name : "Lasagna",
-        ingredients : "Tomato, Cheese, Olive",
-        price : "100",
-        quantity : 1
-    },
-    {
-        img : Lasagna,
-        name : "Lasagna",
-        ingredients : "Tomato, Cheese, Olive",
-        price : "100",
-        quantity : 1
-    },
-    {
-        img : Lasagna,
-        name : "Lasagna",
-        ingredients : "Tomato, Cheese, Olive",
-        price : "100",
-        quantity : 1
-    },
-    {
-        img : Lasagna,
-        name : "Lasagna",
-        ingredients : "Tomato, Cheese, Olive",
-        price : "100",
-        quantity : 1
-    },
-    {
-        img : Lasagna,
-        name : "Lasagna",
-        ingredients : "Tomato, Cheese, Olive",
-        price : "100",
-        quantity : 1
-    },
-    {
-        img : Lasagna,
-        name : "Lasagna",
-        ingredients : "Tomato, Cheese, Olive",
-        price : "100",
-        quantity : 1
-    },
   ]
 
   return (
