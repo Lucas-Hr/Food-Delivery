@@ -2,8 +2,10 @@ import React from 'react'
 import CartItem from './CartItem'
 import Lasagna from '../assets/img/lasagna.jpg'
 import { motion } from 'framer-motion'
+import { useCart } from './CartContext'
 
 const CartList = () => {
+const {cart} = useCart()
   const cartItems = [
     {
         img : Lasagna,
@@ -28,6 +30,7 @@ const CartList = () => {
     },
   ]
 
+
   return (
     <motion.section
         className='px-52 pt-36 relative'
@@ -36,11 +39,12 @@ const CartList = () => {
         transition={{duration : 1}}
     >
         <h1 className='text-center mt-5 mb-5'>Your Cart</h1>
-        {cartItems.map((c, index) => {
+        {cart.map((c, index) => {
             return (
-                <CartItem key={index} img={c.img} name={c.name} ingredients={c.ingredients} price={c.price} quantity={c.quantity}/>
+                <CartItem key={index} img={c.img} name={c.title} ingredients={c.ingredients} price={c.price} quantity={c.quantity}/>
             )
         })}
+
     </motion.section>
   )
 }

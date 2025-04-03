@@ -6,10 +6,10 @@ import Cart from './screen/Cart'
 import Dashboard from './screen/Dashboard'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavigationBar from './components/NavigationBar'
+import { CartProvider } from './components/CartContext'
 const App = () => {
   return (
-    <>
-
+    <CartProvider>
       <BrowserRouter>
         <NavigationBar />
         <Routes>
@@ -19,7 +19,7 @@ const App = () => {
           <Route path='/dashboard' element={<Dashboard />}></Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </CartProvider>
   )
 }
 
