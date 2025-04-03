@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CardBestSeller from './CardBestSeller'
 import Lasagna from '../assets/img/lasagna.jpg'
 import Mac from '../assets/img/mac.jpg'
@@ -6,95 +6,95 @@ import Sushi from '../assets/img/sushi.jpg'
 import Chicken from '../assets/img/chicken.jpg'
 import Arrow from '../assets/img/arrow.png'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
 
 function FoodList() {
     const [categorie, setCategorie] = useState('All');
     const [search, setSearch] = useState('');
     const categories = ['All','Asian Food','Malagasy Food', 'Fast Food' , 'Korean Food', 'Cocktails', 'Cake'];
+
     const food = [
             {
                 img : Lasagna,
                 title : "Lasagna",
                 ingredients : "Tomato, Cheese, Olive",
-                prix : "100",
+                price : "100",
                 categorie : "Korean Food"
             },
             {
                 img : Mac,
                 title : "Lasagna",
                 ingredients : "Tomato, Cheese, Olive",
-                prix : "100",
+                price : "100",
                 categorie : "Fast Food"
             },
             {
                 img : Sushi,
                 title : "Lasagna",
                 ingredients : "Tomato, Cheese, Olive",
-                prix : "100",
+                price : "100",
                 categorie : "Cocktails"
             },
             {
                 img : Chicken,
                 title : "Lasagna",
                 ingredients : "Tomato, Cheese, Olive",
-                prix : "100",
+                price : "100",
                 categorie : "Cake"
             },
             {
                 img : Lasagna,
                 title : "Lasagna",
                 ingredients : "Tomato, Cheese, Olive",
-                prix : "100",
+                price : "100",
                 categorie : "Asian Food"
             },
             {
                 img : Lasagna,
                 title : "Lasagna",
                 ingredients : "Tomato, Cheese, Olive",
-                prix : "100",
+                price : "100",
                 categorie : "Asian Food"
             },
             {
                 img : Lasagna,
                 title : "Bolognaise",
                 ingredients : "Tomato, Cheese, Olive",
-                prix : "100",
+                price : "100",
                 categorie : "Malagasy Food"
             },
             {
                 img : Lasagna,
                 title : "Lasagna",
                 ingredients : "Tomato, Cheese, Olive",
-                prix : "100",
+                price : "100",
                 categorie : "Malagasy Food"
             },
             {
                 img : Lasagna,
                 title : "Mac",
                 ingredients : "Tomato, Cheese, Olive",
-                prix : "100",
+                price : "100",
                 categorie : "Malagasy Food" 
             },
             {
                 img : Lasagna,
                 title : "Lasagna",
                 ingredients : "Tomato, Cheese, Olive",
-                prix : "100",
+                price : "100",
                 categorie : "Malagasy Food"
             },
             {
                 img : Lasagna,
                 title : "Lasagna",
                 ingredients : "Tomato, Cheese, Olive",
-                prix : "100",
+                price : "100",
                 categorie : "Fast Food"
             },
             {
                 img : Lasagna,
                 title : "Lasagna",
                 ingredients : "Tomato, Cheese, Olive",
-                prix : "100",
+                price : "100",
                 categorie : "Fast Food"
             },
 
@@ -165,7 +165,7 @@ function FoodList() {
                             animate={{opacity : 1}}
                             transition={{duration : 1}}
                         >
-                            <CardBestSeller key={index} img={f.img} title={f.title} ingredients={f.ingredients} prix={f.prix}/>
+                            <CardBestSeller key={index} img={f.img} title={f.title} ingredients={f.ingredients} price={f.price}  />
                         </motion.div>
                     )
                 }) : 
@@ -184,7 +184,7 @@ function FoodList() {
                             animate={{opacity : 1}}
                             transition={{duration : 1}}
                         >
-                            <CardBestSeller key={index} img={f.img} title={f.title} ingredients={f.ingredients} prix={f.prix}/>
+                            <CardBestSeller key={index} img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} />
                         </motion.div>
                     )
                 })}

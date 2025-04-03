@@ -54,13 +54,12 @@ function BestSeller() {
         transition={{
            duration: 1,
          }}
-        className='py-5 vh-100' style={{backgroundColor : "#F9F9F9",padding : "0px 200px"}}>
+        className='py-5 vh-100 px-52' style={{backgroundColor : "#F9F9F9"}}>
         <div className='container'>
             <h1 className='text-center mt-5 mb-5'>Our Best Seller</h1>
-            
             <Swiper  
             modules={[Autoplay, Pagination]}
-            spaceBetween={50}
+            spaceBetween={150}
             slidesPerView={3} 
             pagination={{ clickable: true }}
             autoplay
