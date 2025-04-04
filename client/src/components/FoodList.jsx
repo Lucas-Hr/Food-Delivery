@@ -16,88 +16,31 @@ function FoodList() {
             {
                 img : Lasagna,
                 title : "Lasagna",
-                ingredients : "Tomato, Cheese, Olive",
-                price : "100",
+                ingredients : "Tomato, Cheese, Olive, Lasagna",
+                price : "15",
                 categorie : "Korean Food"
             },
             {
                 img : Mac,
-                title : "Lasagna",
-                ingredients : "Tomato, Cheese, Olive",
-                price : "100",
+                title : "Mac n Cheese",
+                ingredients : "Macaroni, Chesse, Beef",
+                price : "20",
                 categorie : "Fast Food"
             },
             {
                 img : Sushi,
-                title : "Lasagna",
-                ingredients : "Tomato, Cheese, Olive",
-                price : "100",
+                title : "Sushi",
+                ingredients : "Fish, Rice",
+                price : "5",
                 categorie : "Cocktails"
             },
             {
                 img : Chicken,
-                title : "Lasagna",
-                ingredients : "Tomato, Cheese, Olive",
-                price : "100",
-                categorie : "Cake"
-            },
-            {
-                img : Lasagna,
-                title : "Lasagna",
-                ingredients : "Tomato, Cheese, Olive",
-                price : "100",
-                categorie : "Asian Food"
-            },
-            {
-                img : Lasagna,
-                title : "Lasagna",
-                ingredients : "Tomato, Cheese, Olive",
-                price : "100",
-                categorie : "Asian Food"
-            },
-            {
-                img : Lasagna,
-                title : "Bolognaise",
-                ingredients : "Tomato, Cheese, Olive",
-                price : "100",
-                categorie : "Malagasy Food"
-            },
-            {
-                img : Lasagna,
-                title : "Lasagna",
-                ingredients : "Tomato, Cheese, Olive",
-                price : "100",
-                categorie : "Malagasy Food"
-            },
-            {
-                img : Lasagna,
-                title : "Mac",
-                ingredients : "Tomato, Cheese, Olive",
-                price : "100",
-                categorie : "Malagasy Food" 
-            },
-            {
-                img : Lasagna,
-                title : "Lasagna",
-                ingredients : "Tomato, Cheese, Olive",
-                price : "100",
-                categorie : "Malagasy Food"
-            },
-            {
-                img : Lasagna,
-                title : "Lasagna",
-                ingredients : "Tomato, Cheese, Olive",
-                price : "100",
+                title : "Chicken",
+                ingredients : "Chicken , Salad",
+                price : "10",
                 categorie : "Fast Food"
-            },
-            {
-                img : Lasagna,
-                title : "Lasagna",
-                ingredients : "Tomato, Cheese, Olive",
-                price : "100",
-                categorie : "Fast Food"
-            },
-
+            }
         ]
 
   return (
@@ -164,8 +107,9 @@ function FoodList() {
                             initial={{opacity : 0}}
                             animate={{opacity : 1}}
                             transition={{duration : 1}}
+                            key={index} 
                         >
-                            <CardBestSeller key={index} img={f.img} title={f.title} ingredients={f.ingredients} price={f.price}  />
+                            <CardBestSeller img={f.img} title={f.title} ingredients={f.ingredients} price={f.price}  />
                         </motion.div>
                     )
                 }) : 
@@ -183,8 +127,9 @@ function FoodList() {
                             initial={{opacity : 0}}
                             animate={{opacity : 1}}
                             transition={{duration : 1}}
+                            key={index}
                         >
-                            <CardBestSeller key={index} img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} />
+                            <CardBestSeller img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} />
                         </motion.div>
                     )
                 })}
