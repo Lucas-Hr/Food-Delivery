@@ -3,15 +3,33 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useCart } from './CartContext'
 import { useQuantity } from './QuantityContext'
+import Swal from 'sweetalert2'
 
 const CardBestSeller = ({img, title, ingredients, price}) => {
   const[isVisible, setIsVisible] = useState(false)
   const [quantity, setQuantity] = useState(0);
   const {addToCart} = useCart()
-
+  
   const handleAddToCart = () => {
     const item = {img, title, ingredients, price, quantity}
     addToCart(item)
+    // Swal.fire({
+    //   title: "Added to cart",
+    //   icon: "success",
+    //   position: "top",
+    //   showConfirmButton: false,
+    //   timer: 1000
+    // });
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    Toast.fire({
+      icon: "success",
+      title: "Added to cart"
+    });
   }
   return (
     <>
