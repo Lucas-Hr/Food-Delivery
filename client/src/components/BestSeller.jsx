@@ -17,31 +17,31 @@ function BestSeller() {
             img : Lasagna,
             title : "Lasagna",
             ingredients : "Tomato, Cheese, Olive",
-            prix : "100"
+            price : "100"
         },
         {
             img : Mac,
             title : "Lasagna",
             ingredients : "Tomato, Cheese, Olive",
-            prix : "100"
+            price : "100"
         },
         {
             img : Sushi,
             title : "Lasagna",
             ingredients : "Tomato, Cheese, Olive",
-            prix : "100"
+            price : "100"
         },
         {
             img : Chicken,
             title : "Lasagna",
             ingredients : "Tomato, Cheese, Olive",
-            prix : "100"
+            price : "100"
         },
         {
             img : Lasagna,
             title : "Lasagna",
             ingredients : "Tomato, Cheese, Olive",
-            prix : "100"
+            price : "100"
         },
 
     ]
@@ -58,17 +58,16 @@ function BestSeller() {
         <div className='container'>
             <h1 className='text-center mt-5 mb-5'>Our Best Seller</h1>
             <Swiper  
-            modules={[Autoplay, Pagination]}
+            modules={[Pagination]}
             spaceBetween={150}
             slidesPerView={3} 
             pagination={{ clickable: true }}
-            autoplay
             className='z-1 cursor-grab'
             >
             {food.map((f, index) => {
                 return (
                     <SwiperSlide key={index}>
-                        <CardBestSeller img={f.img} title={f.title} ingredients={f.ingredients} prix={f.prix}/>
+                        <CardBestSeller img={f.img} title={f.title} ingredients={f.ingredients} price={f.price}/>
                     </SwiperSlide>
                 )
             })}

@@ -2,10 +2,11 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useCart } from './CartContext'
+import { useQuantity } from './QuantityContext'
 
 const CardBestSeller = ({img, title, ingredients, price}) => {
   const[isVisible, setIsVisible] = useState(false)
-  const [quantity , setQuantity] = useState(0)
+  const [quantity, setQuantity] = useState(0);
   const {addToCart} = useCart()
 
   const handleAddToCart = () => {

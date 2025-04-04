@@ -8,7 +8,7 @@ const Cart = () => {
   const [price, setPrice] = useState([])
   useEffect(() => {
     setPrice(cart.map(cart => (cart.price * cart.quantity)))
-  },[])
+  },[cart])
 
   return (
     <>

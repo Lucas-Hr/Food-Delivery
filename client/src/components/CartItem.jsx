@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Trash from '../assets/img/trash.png'
 
-const CartItem = ({img, name, ingredients, price, quantity}) => {
+const CartItem = ({img, title, ingredients, price, quantity, deleteCart}) => {
   return (
     <div className='flex justify-between items-center mb-4 bg-[#F9F9F9] h-[150px] shadow-md'>
         
@@ -9,7 +9,7 @@ const CartItem = ({img, name, ingredients, price, quantity}) => {
 
         <div className='flex justify-between items-center w-100 px-10'>
             <div>
-                <h1 className='text-xl'>{name}</h1>
+                <h1 className='text-xl'>{title}</h1>
                 <p className='text-sm italic'>{ingredients}</p>
             </div>
 
@@ -25,7 +25,7 @@ const CartItem = ({img, name, ingredients, price, quantity}) => {
             
         </div>
 
-        <div className='flex items-center bg-white h-[150px] px-10 rounded-lg border-2 cursor-pointer'>
+        <div className='flex items-center bg-white h-[150px] px-10 rounded-lg border-2 cursor-pointer'  onClick={() => deleteCart(title)}>
             <img src={Trash} alt="trash" className='w-10 h-8 '/>
         </div>
     </div>
