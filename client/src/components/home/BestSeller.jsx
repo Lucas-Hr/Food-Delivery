@@ -1,5 +1,5 @@
 import React from 'react'
-import CardBestSeller from './CardBestSeller'
+import CardBestSeller from '../menu/CardBestSeller'
 import Lasagna from '../../assets/img/lasagna.jpg'
 import Mac from '../../assets/img/mac.jpg'
 import Sushi from '../../assets/img/sushi.jpg'
@@ -10,41 +10,40 @@ import {Pagination , Autoplay } from 'swiper/modules'
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
+import { useQuantity } from '../context/QuantityContext'
 
-function BestSeller() {
+const BestSeller = () => {
+    const {quantities, incrementQuantity, decrementQuantity} = useQuantity()
     const food = [
-        {
-            img : Lasagna,
-            title : "Lasagna",
-            ingredients : "Tomato, Cheese, Olive",
-            price : "100"
-        },
-        {
-            img : Mac,
-            title : "Lasagna",
-            ingredients : "Tomato, Cheese, Olive",
-            price : "100"
-        },
-        {
-            img : Sushi,
-            title : "Lasagna",
-            ingredients : "Tomato, Cheese, Olive",
-            price : "100"
-        },
-        {
-            img : Chicken,
-            title : "Lasagna",
-            ingredients : "Tomato, Cheese, Olive",
-            price : "100"
-        },
-        {
-            img : Lasagna,
-            title : "Lasagna",
-            ingredients : "Tomato, Cheese, Olive",
-            price : "100"
-        },
-
-    ]
+            {
+                img : Lasagna,
+                title : "Lasagna",
+                ingredients : "Tomato, Cheese, Olive, Lasagna",
+                price : "15",
+                categorie : "Korean Food"
+            },
+            {
+                img : Mac,
+                title : "Mac n Cheese",
+                ingredients : "Macaroni, Chesse, Beef",
+                price : "20",
+                categorie : "Fast Food"
+            },
+            {
+                img : Sushi,
+                title : "Sushi",
+                ingredients : "Fish, Rice",
+                price : "5",
+                categorie : "Cocktails"
+            },
+            {
+                img : Chicken,
+                title : "Chicken",
+                ingredients : "Chicken , Salad",
+                price : "10",
+                categorie : "Fast Food"
+            }
+        ]
 
     return (
     <motion.section 
@@ -67,7 +66,8 @@ function BestSeller() {
             {food.map((f, index) => {
                 return (
                     <SwiperSlide key={index}>
-                        <CardBestSeller img={f.img} title={f.title} ingredients={f.ingredients} price={f.price}/>
+                        <CardBestSeller img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} 
+                        incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity} quantities={quantities}/>
                     </SwiperSlide>
                 )
             })}
