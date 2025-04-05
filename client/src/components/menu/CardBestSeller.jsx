@@ -8,14 +8,15 @@ import { useAdded } from '../context/AddedContext'
 
 
 
-const CardBestSeller = ({img, title, ingredients, price}) => {
+const CardBestSeller = ({img, title, ingredients, price, incrementQuantity, decrementQuantity, quantities}) => {
   const[isVisible, setIsVisible] = useState(false)
-  const [quantity, setQuantity] = useState(0);
+  // const {quantities, incrementQuantity, decrementQuantity} = useQuantity()
   const {addToCart} = useCart()
   const {isAdded, setIsAdded} = useAdded()
+  const quantity = quantities[title] || 0
 
   const handleAddToCart = () => {
-    const item = {img, title, ingredients, price, quantity}
+    const item = {img, title, ingredients, price, quantity};
     if (!isAdded) {
       addToCart(item)
       const Toast = Swal.mixin({
@@ -68,9 +69,9 @@ const CardBestSeller = ({img, title, ingredients, price}) => {
           <div className='flex justify-between items-end mt-3'>
             <h5 className='font-bold text-xl'>{price} $</h5>
             <div className='rounded-lg flex justify-between items-center text-white bg-[#FF8000] px-1 pb-0.5'>
-              <span className="mx-1 text-md cursor-pointer" onClick={() => setQuantity(quantity - 1)}>-</span>
+              <span className="mx-1 text-md cursor-pointer" onClick={() => decrementQuantity(title)}>-</span>
               <span className="mx-1 px-2 text-md">{quantity}</span>
-              <span className="mx-1 text-md cursor-pointer" onClick={() => setQuantity(quantity + 1)}>+</span>
+              <span className="mx-1 text-md cursor-pointer" onClick={() => incrementQuantity(title)}>+</span>
             </div>
           </div>
           

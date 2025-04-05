@@ -6,10 +6,12 @@ import Sushi from '../../assets/img/sushi.jpg'
 import Chicken from '../../assets/img/chicken.jpg'
 import Arrow from '../../assets/img/arrow.png'
 import { motion } from 'framer-motion'
+import { useQuantity } from '../context/QuantityContext'
 
 function FoodList() {
     const [categorie, setCategorie] = useState('All');
     const [search, setSearch] = useState('');
+    const {quantities, incrementQuantity, decrementQuantity} = useQuantity()
     const categories = ['All','Asian Food','Malagasy Food', 'Fast Food' , 'Korean Food', 'Cocktails', 'Cake'];
 
     const food = [
@@ -109,7 +111,8 @@ function FoodList() {
                             transition={{duration : 1}}
                             key={index} 
                         >
-                            <CardBestSeller img={f.img} title={f.title} ingredients={f.ingredients} price={f.price}  />
+                            <CardBestSeller img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} 
+                            incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity} quantities={quantities}/>
                         </motion.div>
                     )
                 }) : 
@@ -129,7 +132,8 @@ function FoodList() {
                             transition={{duration : 1}}
                             key={index}
                         >
-                            <CardBestSeller img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} />
+                            <CardBestSeller img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} 
+                            incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity} quantities={quantities}/>
                         </motion.div>
                     )
                 })}
