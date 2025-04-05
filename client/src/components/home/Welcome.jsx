@@ -1,5 +1,5 @@
 import React from 'react'
-import HomePng from '../assets/img/home.png'
+import HomePng from '../../assets/img/home.png'
 import { motion } from 'framer-motion'
 
 const Welcome = () => {

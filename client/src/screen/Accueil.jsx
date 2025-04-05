@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import NavigationBar from '../components/NavigationBar';
-import Welcome from '../components/Welcome';
-import OrderStep from '../components/OrderStep';
-import Team from '../components/Team';
-import BestSeller from '../components/BestSeller';
-import Footer from '../components/Footer';
+import NavigationBar from '../components/home/NavigationBar';
+import Welcome from '../components/home/Welcome';
+import OrderStep from '../components/home/OrderStep';
+import Team from '../components/home/Team';
+import BestSeller from '../components/menu/BestSeller';
+import Footer from '../components/home/Footer';
 const Accueil = () => {
 
   return (

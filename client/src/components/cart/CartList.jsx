@@ -1,7 +1,7 @@
 import React from 'react'
 import CartItem from './CartItem'
 import { motion } from 'framer-motion'
-import { useCart } from './CartContext'
+import { useCart } from '../context/CartContext'
 
 const CartList = () => {
   const {cart, setCart} = useCart()

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import CardBestSeller from './CardBestSeller'
-import Lasagna from '../assets/img/lasagna.jpg'
-import Mac from '../assets/img/mac.jpg'
-import Sushi from '../assets/img/sushi.jpg'
-import Chicken from '../assets/img/chicken.jpg'
-import Arrow from '../assets/img/arrow.png'
+import Lasagna from '../../assets/img/lasagna.jpg'
+import Mac from '../../assets/img/mac.jpg'
+import Sushi from '../../assets/img/sushi.jpg'
+import Chicken from '../../assets/img/chicken.jpg'
+import Arrow from '../../assets/img/arrow.png'
 import { motion } from 'framer-motion'
 
 function FoodList() {

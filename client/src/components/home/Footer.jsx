@@ -1,12 +1,12 @@
 import React from 'react'
-import Logo from '../assets/img/DeliverEats.svg'
-import Facebook from '../assets/img/facebook.svg'
-import Instagram from '../assets/img/instagram.svg'
-import Twitter from '../assets/img/twitter.svg'
-import LinkedIn from '../assets/img/linkedin.svg'
-import Address from '../assets/img/address.png'
-import Phone from '../assets/img/phone.png'
-import Mail from '../assets/img/mail.png'
+import Logo from '../../assets/img/DeliverEats.svg'
+import Facebook from '../../assets/img/facebook.svg'
+import Instagram from '../../assets/img/instagram.svg'
+import Twitter from '../../assets/img/twitter.svg'
+import LinkedIn from '../../assets/img/linkedin.svg'
+import Address from '../../assets/img/address.png'
+import Phone from '../../assets/img/phone.png'
+import Mail from '../../assets/img/mail.png'
 
 const Footer = () => {
   return (

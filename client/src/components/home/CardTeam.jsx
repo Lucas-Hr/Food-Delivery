@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Facebook from '../assets/img/facebook.svg'
-import Twitter from '../assets/img/twitter.svg'
-import Instagram from '../assets/img/instagram.svg'
-import LinkedIn from '../assets/img/linkedin.svg'
+import Facebook from '../../assets/img/facebook.svg'
+import Twitter from '../../assets/img/twitter.svg'
+import Instagram from '../../assets/img/instagram.svg'
+import LinkedIn from '../../assets/img/linkedin.svg'
 
 const CardTeam = ({img, nom, poste}) => {
   return (
