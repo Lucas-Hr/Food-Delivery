@@ -1,5 +1,5 @@
 import React from 'react'
-import Trash from '../assets/img/trash.png'
+import Trash from '../../assets/img/trash.png'
 
 function CartElement({img, name, ingredients, price, quantity}) {
   return (

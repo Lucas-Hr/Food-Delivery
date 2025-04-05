@@ -1,7 +1,7 @@
-import Footer from '../components/Footer'
-import CartList from '../components/CartList'
-import Payment from '../components/Payment'
-import { useCart } from '../components/CartContext'
+import Footer from '../components/home/Footer'
+import CartList from '../components/cart/CartList'
+import Payment from '../components/cart/Payment'
+import { useCart } from '../components/context/CartContext'
 import { useEffect, useState } from 'react'
 const Cart = () => {
   const {cart} = useCart()

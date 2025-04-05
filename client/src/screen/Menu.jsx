@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import Navigationbar from '../components/NavigationBar'
-import FoodList from '../components/FoodList'
-import Footer from '../components/Footer'
+import Navigationbar from '../components/home/NavigationBar'
+import FoodList from '../components/menu/FoodList'
+import Footer from '../components/home/Footer'
 const Menu = ({item}) => {
 
   return (

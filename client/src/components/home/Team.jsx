@@ -1,9 +1,9 @@
 import React from 'react';
 import CardTeam from './CardTeam';
-import firstOne from '../assets/img/firstOne.jpg';
-import secondOne from '../assets/img/secondOne.jpg';
-import thirdOne from '../assets/img/thirdOne.jpg';
-import fourthOne from '../assets/img/fourthOne.jpg';
+import firstOne from '../../assets/img/firstOne.jpg';
+import secondOne from '../../assets/img/secondOne.jpg';
+import thirdOne from '../../assets/img/thirdOne.jpg';
+import fourthOne from '../../assets/img/fourthOne.jpg';
 import { motion } from 'framer-motion';
 const Team = () => {
     return (

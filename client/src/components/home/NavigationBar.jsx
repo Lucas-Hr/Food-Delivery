@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav'
-import Logo from '../assets/img/Logo.png'
-import Cart from '../assets/img/cart.png'
-import Login from '../assets/img/login.png'
-import Active from '../assets/img/activeNavBar.png'
-import './../assets/style/navbar.css'
+import Logo from '../../assets/img/Logo.png'
+import Cart from '../../assets/img/cart.png'
+import Login from '../../assets/img/login.png'
+import Active from '../../assets/img/activeNavBar.png'
+import './../../assets/style/navbar.css'
 import {motion, AnimatePresence} from 'framer-motion'
 
 const NavigationBar = () => {
