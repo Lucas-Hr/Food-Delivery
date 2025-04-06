@@ -3,19 +3,19 @@ import CartList from '../components/cart/CartList'
 import Payment from '../components/cart/Payment'
 import { useCart } from '../components/context/CartContext'
 import { useEffect, useState } from 'react'
+import { useQuantity } from '../components/context/QuantityContext'
 const Cart = () => {
   const {cart} = useCart()
-  const [price, setPrice] = useState([])
-  useEffect(() => {
-    setPrice(cart.map(cart => (cart.price * cart.quantity)))
-  },[cart])
+  const {quantities} = useQuantity()
+  const totalPrice = cart.reduce((acc, item) => {
+    const quantity = quantities[item.title] 
+    return acc + item.price * quantity
+  }, 0)
 
   return (
     <>
       <CartList />
-      <Payment total={price.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
-    },0)}/>
+      <Payment total={totalPrice} />
       <Footer />
     </>
   )

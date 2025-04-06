@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Trash from '../../assets/img/trash.png'
 
-const CartItem = ({img, title, ingredients, price, quantity, deleteCart}) => {
+
+const CartItem = ({img, title, ingredients, price, 
+                  deleteCart, incrementQuantity, decrementQuantity, 
+                  quantities, setQuantity, setAdded}) => {
+  const quantity = quantities[title];
+
   return (
     <div className='flex justify-between items-center mb-4 bg-[#F9F9F9] h-[150px] shadow-md'>
         
@@ -18,14 +23,17 @@ const CartItem = ({img, title, ingredients, price, quantity, deleteCart}) => {
             </div>
 
             <div className='rounded-lg flex justify-between items-center text-white bg-[#FF8000] px-1 pb-0.5'>
-              <span className="mx-1 text-sm cursor-pointer">-</span>
+              <span className="mx-1 text-sm cursor-pointer" onClick={() => decrementQuantity(title)}>-</span>
               <span className="mx-1 px-2 text-sm">{quantity}</span>
-              <span className="mx-1 text-sm cursor-pointer">+</span>
+              <span className="mx-1 text-sm cursor-pointer" onClick={() => incrementQuantity(title)}>+</span>
             </div>
             
         </div>
 
-        <div className='flex items-center bg-white h-[150px] px-10 rounded-lg border-2 cursor-pointer'  onClick={() => deleteCart(title)}>
+        <div className='flex items-center bg-white h-[150px] px-10 rounded-lg border-2 cursor-pointer' 
+              onClick={() => {setQuantity(title);
+                              setAdded(title, false)
+                              deleteCart(title)}}>
             <img src={Trash} alt="trash" className='w-10 h-8 '/>
         </div>
     </div>

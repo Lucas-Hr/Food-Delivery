@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 export const QuantityContext = createContext();
 
 export const QuantityProvider = ({children}) => {
-    const [quantities, setQuantities] = useState(0);
+    const [quantities, setQuantities] = useState({});
     const incrementQuantity = (key) => {
         setQuantities(prev => ({
             ...prev,
@@ -17,8 +17,14 @@ export const QuantityProvider = ({children}) => {
             [key]: Math.max((prev[key] || 0) - 1, 0)
         }));
     };
+
+    const setQuantity = (key) => {
+        setQuantities((prev) => ({
+            ...prev, [key] : 0
+        }));
+    };
     return (
-        <QuantityContext.Provider value={{quantities, setQuantities, incrementQuantity, decrementQuantity}}>
+        <QuantityContext.Provider value={{quantities, setQuantities, incrementQuantity, decrementQuantity, setQuantity}}>
             {children}
         </QuantityContext.Provider>
     )
