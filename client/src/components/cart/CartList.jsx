@@ -2,9 +2,13 @@ import React from 'react'
 import CartItem from './CartItem'
 import { motion } from 'framer-motion'
 import { useCart } from '../context/CartContext'
+import { useQuantity } from '../context/QuantityContext'
+import { useAdded } from '../context/AddedContext'
 
 const CartList = () => {
   const {cart, setCart} = useCart()
+  const { setAdded } = useAdded()
+  const {quantities, incrementQuantity, decrementQuantity, setQuantity} = useQuantity()
   const deleteCart = (title) => {
     setCart(cart.filter(c => c.title !== title))
   }
@@ -19,7 +23,10 @@ const CartList = () => {
         {cart.map((c, index) => {
             return (
               <>
-                <CartItem key={index} img={c.img} title={c.title} ingredients={c.ingredients} price={c.price} quantity={c.quantity} deleteCart={deleteCart} />
+                <CartItem key={index} img={c.img} title={c.title} ingredients={c.ingredients} price={c.price} deleteCart={deleteCart} 
+                incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity} quantities={quantities} setQuantity={setQuantity}
+                setAdded={setAdded}
+                />
               </>
                 
             )

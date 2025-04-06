@@ -112,7 +112,9 @@ function FoodList() {
                             key={index} 
                         >
                             <CardBestSeller img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} 
-                            incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity} quantities={quantities}/>
+                            incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity} quantities={quantities}
+                             
+                            />
                         </motion.div>
                     )
                 }) : 
@@ -133,7 +135,8 @@ function FoodList() {
                             key={index}
                         >
                             <CardBestSeller img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} 
-                            incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity} quantities={quantities}/>
+                            incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity} quantities={quantities}
+                            />
                         </motion.div>
                     )
                 })}

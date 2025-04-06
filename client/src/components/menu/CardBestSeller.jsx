@@ -3,21 +3,20 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Swal from 'sweetalert2'
 import { useCart } from '../context/CartContext'
-import { useQuantity } from '../context/QuantityContext'
 import { useAdded } from '../context/AddedContext'
 
 
 
 const CardBestSeller = ({img, title, ingredients, price, incrementQuantity, decrementQuantity, quantities}) => {
   const[isVisible, setIsVisible] = useState(false)
-  // const {quantities, incrementQuantity, decrementQuantity} = useQuantity()
+  // const [isAdded, setIsAdded] = useState(0)
+  const {isAdded, setAdded} = useAdded()
   const {addToCart} = useCart()
-  const {isAdded, setIsAdded} = useAdded()
   const quantity = quantities[title] || 0
-
   const handleAddToCart = () => {
     const item = {img, title, ingredients, price, quantity};
-    if (!isAdded) {
+    if (!isAdded[title]){
+      setAdded(item.title, true)
       addToCart(item)
       const Toast = Swal.mixin({
         toast: true,
@@ -29,7 +28,6 @@ const CardBestSeller = ({img, title, ingredients, price, incrementQuantity, decr
         icon: "success",
         title: "Added to cart"
       });
-      setIsAdded(true)
     }
 
     else {
