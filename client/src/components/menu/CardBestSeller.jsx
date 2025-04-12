@@ -45,7 +45,7 @@ const CardBestSeller = ({img, title, ingredients, price, incrementQuantity, decr
   }
   return (
     <>
-      <div className="card w-[250px] h-[300px] shadow-sm mb-5 cursor-pointer overflow-hidden" 
+      <div className="card w-[250px] h-[320px] shadow-sm mb-5 cursor-pointer overflow-hidden" 
       onMouseEnter={() => setIsVisible(true)}
       onMouseLeave={() => setIsVisible(false)}
       >
@@ -62,8 +62,8 @@ const CardBestSeller = ({img, title, ingredients, price, incrementQuantity, decr
         }
         <img src={img} className={`card-img-top img-fluid mx-auto d-block object-fit-cover h-44  z-1 transition duration-150 ease-out ${isVisible ? "ease-in filter brightness-50 scale-110" : ""}`} alt="..." />
         <div className="card-body">
-          <h5 className="card-title text-xl leading-none">{title}</h5>
-          <h5 className="card-text text-sm italic">{ingredients}</h5>
+          <h5 className="card-title text-xl semibold leading-none">{title}</h5>
+          <h5 className="card-text text-sm italic text-[#6D6D6D]">{ingredients}</h5>
           <div className='flex justify-between items-end mt-3'>
             <h5 className='font-bold text-xl'>{price} $</h5>
             <div className='rounded-lg flex justify-between items-center text-white bg-[#FF8000] px-1 pb-0.5'>
