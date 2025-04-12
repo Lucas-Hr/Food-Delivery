@@ -8,13 +8,17 @@ import Cart from '../../assets/img/cart.png'
 import Login from '../../assets/img/login.png'
 import Active from '../../assets/img/activeNavBar.png'
 import './../../assets/style/navbar.css'
-import {motion, AnimatePresence} from 'framer-motion'
+import {motion} from 'framer-motion'
+import SignIn from '../Authentication/SignIn'
 
 const NavigationBar = () => {
   const [position, setPosition] = useState(0)
-  
+  const [isVisible, setIsVisible] = useState(false)
   return (
     <>
+      {isVisible && 
+            <SignIn setIsVisible={setIsVisible}/>
+      }
       <Navbar className="w-100 justify-content-between fixed shadow top-0 bg-white z-3 px-52 py-8" >
         <Navbar.Brand>
           <img
@@ -45,7 +49,7 @@ const NavigationBar = () => {
           </Nav.Item>
           <Nav.Item className='d-flex align-items-center cursor-pointer'>
             <img style={{width : 20,height :20}} src={Login} alt="" />
-            <Nav.Link className='link'> Login </Nav.Link>
+            <Nav.Link className='link' onClick={() => setIsVisible(true)}> Login </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link >
