@@ -15,7 +15,7 @@ import Tonkotsu from '../../assets/img/tonkotsu.jpg'
 import VanillaCake from '../../assets/img/vanillacake.jpg'
 import Arrow from '../../assets/img/arrow.png'
 import { motion } from 'framer-motion'
-import { useQuantity } from '../context/QuantityContext'
+import { useQuantity } from '../context/QuantityContext'    
 
 const FoodList = () => {
     const [categorie, setCategorie] = useState('All');
@@ -83,6 +83,7 @@ const FoodList = () => {
           },
         {
             img: PizzaPeperoni,
+            title: "Pizza Pepperoni",
             ingredients: "Dough, Tomato Sauce, Mozzarella Cheese, Pepperoni",
             price: 11.00,
             category: "Fast Food"
@@ -189,14 +190,12 @@ const FoodList = () => {
                 transition={{duration : 1}}
                 className='flex flex-wrap justify-between w-full ms-5 overflow-scroll'
             >
-                {categorie === 'All' ? 
-                
+                {categorie === 'All' ?   
                 food.filter((f) => {
-                    return search.toLowerCase() === ""
-                        ? f
-                        : f.title.toLowerCase().includes(search);
-                    })
-                    .map((f, index) => {
+                return search.toLowerCase() === ""
+                    ? f
+                    : f.title.toLowerCase().includes(search);
+                }).map((f, index) => {
                     return (
                         <motion.div
                             initial={{opacity : 0}}
@@ -212,8 +211,7 @@ const FoodList = () => {
                     )
                 }) : 
                 
-                food
-                .filter((f) => f.category === categorie)
+                food.filter((f) => f.category === categorie)
                 .filter((f) => {
                     return search.toLowerCase() === ""
                         ? f
