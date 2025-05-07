@@ -1,5 +1,7 @@
 import React , { useState } from 'react'
 import FoodCard from '../../components/admin/FoodCard'
+import Search from '../../components/menu/Search'
+import Sort from '../../components/menu/Sort'
 import { motion } from 'framer-motion'
 import Categorie from '../../components/menu/Categorie'
 import Sushi from '../../assets/img/sushi.jpg'
@@ -18,9 +20,26 @@ import VanillaCake from '../../assets/img/vanillacake.jpg'
 
 
 
-function Menu() {
+const Menu = () => {
 const categories = ['All','Asian Food','Malagasy Food', 'Fast Food' , 'Korean Food', 'Cocktails', 'Cake'];
+const [search, setSearch] = useState('');
 const [categorie, setCategorie] = useState('All');
+const [sort, setSort] = useState('')
+const handleSort = (e) => {
+  setSort(e.target.value);
+  sortFood(e.target.value);
+}
+const sortFood = (key) => {
+  const sortedFood = [...food].sort((a, b) => {
+      if (typeof a[key] === 'string') {
+          return a[key].localeCompare(b[key]);
+        } else {
+          return a[key] - b[key];
+        }
+  })
+  setFood(sortedFood) 
+}
+
 const [food, setFood] = useState([
         {
             img: Sushi,
@@ -119,11 +138,20 @@ const [food, setFood] = useState([
       <div className='bg-[#F2F2F2] w-full px-8 py-4'>
         <h1 className='text-[#464255] text-2xl font-semibold'>Food List</h1>
         <h3 className='text-[#A3A3A3]'>Welcome back to DeliverEats admin!</h3>
+        <Sort sort={sort} handleSort={handleSort}/>
         <div className='mt-10 flex '>
-          <Categorie categories={categories} setCategorie={setCategorie}/>
+          <div>
+            <Search setSearch={setSearch}/>
+            <Categorie categories={categories} setCategorie={setCategorie}/>
+          </div>
+          
           <div className='flex flex-wrap justify-between w-full  overflow-scroll ms-10'>
           {categorie === 'All' ?   
-                food.map((f, index) => {
+                food.filter((f) => {
+                  return search.toLowerCase() === ""
+                      ? f
+                      : f.title.toLowerCase().includes(search);
+                  }).map((f, index) => {
                     return (
                         <motion.div
                             initial={{opacity : 0}}
@@ -136,7 +164,11 @@ const [food, setFood] = useState([
                     )
                 }) : 
                 
-                food.filter((f) => f.category === categorie)
+                food.filter((f) => f.category === categorie).filter((f) => {
+                  return search.toLowerCase() === ""
+                      ? f
+                      : f.title.toLowerCase().includes(search);
+                  })
                 .map((f, index) => {
                     return (
                         <motion.div

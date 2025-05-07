@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import CardBestSeller from './CardBestSeller'
+import Categorie from './Categorie'
+import Sort from './Sort'
+import Search from './Search'
 import Sushi from '../../assets/img/sushi.jpg'
 import Romazava from '../../assets/img/romazava.jpg'
 import CheeseBurger from '../../assets/img/cheeseburger.jpg'
@@ -13,7 +16,6 @@ import PadThai from '../../assets/img/padthai.jpg'
 import PizzaPeperoni from '../../assets/img/pizzapeperoni.jpg'
 import Tonkotsu from '../../assets/img/tonkotsu.jpg'
 import VanillaCake from '../../assets/img/vanillacake.jpg'
-import Categorie from './Categorie'
 import { motion } from 'framer-motion'
 import { useQuantity } from '../context/QuantityContext'    
 
@@ -132,41 +134,16 @@ const FoodList = () => {
                 return a[key] - b[key];
               }
         })
-        setFood(sortedFood)
-        
+        setFood(sortedFood) 
     }
 
   return (
     <section className='px-52 py-36 relative'>
-        <motion.select 
-            initial={{opacity : 0, x : -200}}
-            animate={{opacity : 1, x:0}}
-            transition={{duration : 1}}
-            name="" id=""
-            className='bg-[#ffff] border-2 rounded-md py-1 px-2 shadow-sm relative left-64'
-            value={sort}
-            onChange={handleSort}
-        >
-            <option value="" disabled>Sort by</option>
-            <option value="title">Name</option>
-            <option value="price">Price</option>
-        </motion.select>
+        <Sort sort={sort} handleSort={handleSort}/>
         <div className='d-flex justify-content-between vh-100 mt-2'>
-            <motion.div 
-                initial={{opacity : 0, x : -100}}
-                animate={{opacity : 1, x:0}}
-                transition={{duration : 1}}
-            >
-                <input 
-                    className="bg-[#ffff] border-2 rounded-md py-1 px-2 shadow-sm focus:outline-none"
-                    type="text" 
-                    name="" 
-                    id="" 
-                    placeholder='Search food...'
-                    onChange={(e) => setSearch(e.target.value)}
-                />
-                <Categorie categories={categories} setCategorie={setCategorie}/>
-            </motion.div>
+            <Search setSearch={setSearch}/>
+            <Categorie categories={categories} setCategorie={setCategorie}/>
+
 
             <motion.div 
                 initial={{opacity : 0, x : 100}}
