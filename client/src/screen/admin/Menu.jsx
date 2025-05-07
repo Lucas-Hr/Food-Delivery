@@ -1,7 +1,7 @@
 import React , { useState } from 'react'
 import FoodCard from '../../components/admin/FoodCard'
 import { motion } from 'framer-motion'
-
+import Categorie from '../../components/menu/Categorie'
 import Sushi from '../../assets/img/sushi.jpg'
 import Romazava from '../../assets/img/romazava.jpg'
 import CheeseBurger from '../../assets/img/cheeseburger.jpg'
@@ -19,6 +19,8 @@ import VanillaCake from '../../assets/img/vanillacake.jpg'
 
 
 function Menu() {
+const categories = ['All','Asian Food','Malagasy Food', 'Fast Food' , 'Korean Food', 'Cocktails', 'Cake'];
+const [categorie, setCategorie] = useState('All');
 const [food, setFood] = useState([
         {
             img: Sushi,
@@ -117,22 +119,36 @@ const [food, setFood] = useState([
       <div className='bg-[#F2F2F2] w-full px-8 py-4'>
         <h1 className='text-[#464255] text-2xl font-semibold'>Food List</h1>
         <h3 className='text-[#A3A3A3]'>Welcome back to DeliverEats admin!</h3>
-        <div className='mt-10'>
-          <div className='flex flex-wrap justify-between w-full  overflow-scroll'>
-            {   
-            food.map((f, index) => {
-                return (
-                    <motion.div
-                        initial={{opacity : 0}}
-                        animate={{opacity : 1}}
-                        transition={{duration : 1}}
-                        key={index} 
-                    >
-                        <FoodCard img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} />
-                    </motion.div>
-                )
-            })
-            }
+        <div className='mt-10 flex '>
+          <Categorie categories={categories} setCategorie={setCategorie}/>
+          <div className='flex flex-wrap justify-between w-full  overflow-scroll ms-10'>
+          {categorie === 'All' ?   
+                food.map((f, index) => {
+                    return (
+                        <motion.div
+                            initial={{opacity : 0}}
+                            animate={{opacity : 1}}
+                            transition={{duration : 1}}
+                            key={index} 
+                        >
+                            <FoodCard img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} />
+                        </motion.div>
+                    )
+                }) : 
+                
+                food.filter((f) => f.category === categorie)
+                .map((f, index) => {
+                    return (
+                        <motion.div
+                            initial={{opacity : 0}}
+                            animate={{opacity : 1}}
+                            transition={{duration : 1}}
+                            key={index}
+                        >
+                            <FoodCard img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} />
+                        </motion.div>
+                    )
+                })}
           </div>
         
         </div>

@@ -26,7 +26,7 @@ const SideNav = () => {
         </div>
 
         <div className='flex flex-col mt-10 ps-12'>
-            <NavLink onClick={() => setPosition(0)} className="link cursor-pointer position-relative py-3 flex" to="/">
+            <NavLink onClick={() => setPosition(0)} className="link cursor-pointer position-relative py-3 flex" to="/dashboard">
             {({ isActive }) => (
                 <>
                     <img src={DashboardIcon} alt="" className="me-3" />
