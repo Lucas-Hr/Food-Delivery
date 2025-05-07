@@ -32,7 +32,7 @@ const App = () => {
         <div className='flex'>
           <SideNav />
             <Routes>
-              <Route path='/' element={<Dashboard />}></Route>
+              <Route path='/dashboard' element={<Dashboard />}></Route>
               <Route path='/orderlist' element={<OrderList />}></Route>
               <Route path='/menuadmin' element={<MenuAdmin />}></Route>
               <Route path='/employees' element={<Employees />}></Route>

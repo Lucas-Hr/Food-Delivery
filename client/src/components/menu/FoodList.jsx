@@ -13,7 +13,7 @@ import PadThai from '../../assets/img/padthai.jpg'
 import PizzaPeperoni from '../../assets/img/pizzapeperoni.jpg'
 import Tonkotsu from '../../assets/img/tonkotsu.jpg'
 import VanillaCake from '../../assets/img/vanillacake.jpg'
-import Arrow from '../../assets/img/arrow.png'
+import Categorie from './Categorie'
 import { motion } from 'framer-motion'
 import { useQuantity } from '../context/QuantityContext'    
 
@@ -165,23 +165,7 @@ const FoodList = () => {
                     placeholder='Search food...'
                     onChange={(e) => setSearch(e.target.value)}
                 />
-                <h2 className='mt-4 text-3xl' style={{borderLeft : "4px solid #FF8000", paddingLeft : "10px"}}>Categories</h2>
-                <div>
-                    {categories.map((c, index) => {
-                        return (
-                            <motion.div
-                            initial={{x:0}}
-                            whileHover={{x:10}} 
-                            key={index}
-                            className='d-flex my-4 cursor-pointer'
-                            onClick={() => {setCategorie(c)}}
-                            >
-                                <img src={Arrow} style={{width : 15, height : 20}} className='me-2' alt="" />
-                                <h6>{c}</h6>
-                            </motion.div>
-                        )
-                    })}
-                </div>
+                <Categorie categories={categories} setCategorie={setCategorie}/>
             </motion.div>
 
             <motion.div 
