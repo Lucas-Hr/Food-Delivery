@@ -40,6 +40,12 @@ const sortFood = (key) => {
   setFood(sortedFood) 
 }
 
+const deleteFood = (foodToDelete) => 
+  {
+    const newFood  = food.filter(f => f !== foodToDelete);
+    setFood(newFood);
+}
+
 const [food, setFood] = useState([
         {
             img: Sushi,
@@ -159,7 +165,7 @@ const [food, setFood] = useState([
                             transition={{duration : 1}}
                             key={index} 
                         >
-                            <FoodCard img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} />
+                            <FoodCard img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} deleteFood={() => deleteFood(f)}/>
                         </motion.div>
                     )
                 }) : 
@@ -177,7 +183,7 @@ const [food, setFood] = useState([
                             transition={{duration : 1}}
                             key={index}
                         >
-                            <FoodCard img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} />
+                            <FoodCard img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} deleteFood={() => deleteFood(f)}/>
                         </motion.div>
                     )
                 })}
