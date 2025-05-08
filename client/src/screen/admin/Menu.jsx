@@ -2,6 +2,7 @@ import React , { useState } from 'react'
 import FoodCard from '../../components/admin/FoodCard'
 import Search from '../../components/menu/Search'
 import Sort from '../../components/menu/Sort'
+import EditFood from '../../components/admin/EditFood'
 import { motion } from 'framer-motion'
 import Categorie from '../../components/menu/Categorie'
 import Sushi from '../../assets/img/sushi.jpg'
@@ -25,6 +26,7 @@ const categories = ['All','Asian Food','Malagasy Food', 'Fast Food' , 'Korean Fo
 const [search, setSearch] = useState('');
 const [categorie, setCategorie] = useState('All');
 const [sort, setSort] = useState('')
+const [isVisible,setIsVisible] = useState(false)
 const handleSort = (e) => {
   setSort(e.target.value);
   sortFood(e.target.value);
@@ -142,6 +144,7 @@ const [food, setFood] = useState([
 
   return (
       <div className='bg-[#F2F2F2] w-full px-8 py-4'>
+        {isVisible && <EditFood setIsVisible={setIsVisible}/> }
         <h1 className='text-[#464255] text-2xl font-semibold'>Food List</h1>
         <h3 className='text-[#A3A3A3]'>Welcome back to DeliverEats admin!</h3>
         <Sort sort={sort} handleSort={handleSort}/>
@@ -165,7 +168,7 @@ const [food, setFood] = useState([
                             transition={{duration : 1}}
                             key={index} 
                         >
-                            <FoodCard img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} deleteFood={() => deleteFood(f)}/>
+                            <FoodCard img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} deleteFood={() => deleteFood(f)} setIsVisible={setIsVisible}/>
                         </motion.div>
                     )
                 }) : 
@@ -183,7 +186,7 @@ const [food, setFood] = useState([
                             transition={{duration : 1}}
                             key={index}
                         >
-                            <FoodCard img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} deleteFood={() => deleteFood(f)}/>
+                            <FoodCard img={f.img} title={f.title} ingredients={f.ingredients} price={f.price} deleteFood={() => deleteFood(f)} setIsVisible={setIsVisible}/>
                         </motion.div>
                     )
                 })}
