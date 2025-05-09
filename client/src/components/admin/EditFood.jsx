@@ -8,6 +8,11 @@ const EditFood = ({setIsVisible}) => {
         <h3 className='text-center text-3xl'>Edit Food</h3>
         <div className='mt-2'>
             <div className="my-3">
+                <label htmlFor="title">Image
+                    <input type="file" accept="image/*" className='rounded bg-light border px-2 py-2 w-full mt-2'  />
+                </label>
+            </div>
+            <div className="my-3">
                 <label htmlFor="title">Title</label><br />
                 <input type="text" className='rounded px-2 py-2 w-full bg-light border mt-2'  />
             </div>
@@ -20,11 +25,11 @@ const EditFood = ({setIsVisible}) => {
                 <input type="text" className='rounded px-2 py-2 w-full bg-light border mt-2' />
             </div>
             <div className="mt-4">
-                <input type="submit" value="Confirmer"  className='rounded px-2 py-2 w-full bg-[#FF8000] text-light '/>
+                <input type="submit" value="Confirm"  className='rounded px-2 py-2 w-full bg-[#FF8000] text-light '/>
             </div>
         </div>
     </form>
   )
 }
 
-export default EditFood
+export default EditFood;
