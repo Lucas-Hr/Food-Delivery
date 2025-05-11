@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import Logo from '../../assets/img/Logo.png'
-import DashboardIcon from '../../assets/img/Dashboard.svg'
-import OrderListIcon from '../../assets/img/orderlist.svg'
-import FoodsIcon from '../../assets/img/foods.svg'
-import EmployeeIcon from '../../assets/img/employee.svg'
+import DashboardSvg from '../../assets/img/DashboardSvg'
+import EmployeeSvg from '../../assets/img/EmployeeSvg'
+import FoodsSvg from '../../assets/img/FoodsSvg'
+
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Highlight from '../../assets/img/highlight.png'
+import OrderListSvg from '../../assets/img/OrderListSvg'
 
 const SideNav = () => {
     const [position, setPosition] = useState(0)
@@ -29,8 +30,8 @@ const SideNav = () => {
             <NavLink onClick={() => setPosition(0)} className="link cursor-pointer position-relative py-3 flex" to="/">
             {({ isActive }) => (
                 <>
-                    <img src={DashboardIcon} alt="" className="me-3" />
-                    <span className={isActive ? "text-[#FF8000] me-3 " : "text-[#464255] me-3"}>
+                    <DashboardSvg color={isActive ? "#FF8000" : "#464255"}/>
+                    <span className={isActive ? "text-[#FF8000] ms-3 " : "text-[#464255] ms-3"}>
                         Dashboard
                     </span>
                 </>
@@ -39,8 +40,8 @@ const SideNav = () => {
             <NavLink onClick={() => setPosition(55)} className="link cursor-pointer position-relative py-3 flex" to="/orderlist">
             {({ isActive }) => (
                 <>
-                <img src={OrderListIcon} alt="" className='me-3' />
-                <span className={isActive ? "text-[#FF8000] me-3 " : "text-[#464255] me-3"}>
+                <OrderListSvg color={isActive ? "#FF8000" : "#464255"}/>
+                <span className={isActive ? "text-[#FF8000] ms-3 " : "text-[#464255] ms-3"}>
                     Order List
                 </span>
                 </>
@@ -49,8 +50,8 @@ const SideNav = () => {
             <NavLink onClick={() => setPosition(110)} className="link cursor-pointer position-relative py-3 flex" to="/menuadmin">
             {({ isActive }) => (
                 <>
-                    <img src={FoodsIcon} alt="" className='me-3' />
-                    <span className={isActive ? "text-[#FF8000] me-3 " : "text-[#464255] me-3"}>
+                    <FoodsSvg color={isActive ? "#FF8000" : "#464255"}/>
+                    <span className={isActive ? "text-[#FF8000] ms-3 " : "text-[#464255] ms-3"}>
                         Food List
                     </span>
                     
@@ -61,8 +62,8 @@ const SideNav = () => {
             <NavLink onClick={() => setPosition(168)} className="link cursor-pointer position-relative py-3 flex" to="/employees">
             {({ isActive }) => (
                 <>
-                    <img src={EmployeeIcon} alt="" className='me-3' />
-                    <span className={isActive ? "text-[#FF8000] me-3 " : "text-[#464255] me-3"}>
+                    <EmployeeSvg color={isActive ? "#FF8000" : "#464255"}/>
+                    <span className={isActive ? "text-[#FF8000] ms-3 " : "text-[#464255] ms-3"}>
                         Employees
                     </span>
                     

@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Facebook from '../../assets/img/facebook.svg'
-import Twitter from '../../assets/img/twitter.svg'
-import Instagram from '../../assets/img/instagram.svg'
-import LinkedIn from '../../assets/img/linkedin.svg'
+import FacebookSvg from '../../assets/img/FacebookSvg'
+import TwitterSvg from '../../assets/img/TwitterSvg'
+import InstagramSvg from '../../assets/img/InstagramSvg'
+import LinkedInSvg from '../../assets/img/LinkedInSvg'
 
 const CardTeam = ({img, nom, poste}) => {
   return (
@@ -13,10 +13,10 @@ const CardTeam = ({img, nom, poste}) => {
         <h3 className='card-title text-center mt-3 text-3xl font-semibold'>{nom}</h3>
         <h5 className='card-subtitle text-center mt-2 text-2xl'>{poste}</h5>
         <div className='d-flex justify-content-between mt-5'>
-          <Link to='#'><img src={Facebook} className='w-[30px] h-[30px]'/></Link>
-          <Link to='#'><img src={Twitter} className='w-[30px] h-[30px]'/></Link>
-          <Link to='#'><img src={Instagram} className='w-[30px] h-[30px]'/></Link>
-          <Link to='#'><img src={LinkedIn} className='w-[30px] h-[30px]'/></Link>
+          <Link to='#'><FacebookSvg className='w-[20px] h-[20px]' color={"black"} size={30}/></Link>
+          <Link to='#'><TwitterSvg className='w-[20px] h-[20px]' color={"black"} size={30}/></Link>
+          <Link to='#'><InstagramSvg className='w-[20px] h-[20px]' color={"black"} size={30}/></Link>
+          <Link to='#'><LinkedInSvg className='w-[20px] h-[20px]' color={"black"} size={30}/></Link>
         </div>
       </div>
     </>

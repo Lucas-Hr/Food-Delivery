@@ -1,9 +1,9 @@
 import React from 'react'
 import Logo from '../../assets/img/DeliverEats.svg'
-import Facebook from '../../assets/img/facebook.svg'
-import Instagram from '../../assets/img/instagram.svg'
-import Twitter from '../../assets/img/twitter.svg'
-import LinkedIn from '../../assets/img/linkedin.svg'
+import FacebookSvg from '../../assets/img/FacebookSvg'
+import InstagramSvg from '../../assets/img/InstagramSvg'
+import TwitterSvg from '../../assets/img/TwitterSvg'
+import LinkedInSvg from '../../assets/img/LinkedInSvg'
 import Address from '../../assets/img/address.png'
 import Phone from '../../assets/img/phone.png'
 import Mail from '../../assets/img/mail.png'
@@ -20,10 +20,10 @@ const Footer = () => {
             at atque ducimus! Error, ex!
           </p>
           <div className='flex mt-8'>
-            <img src={Facebook} style={{width : 30, height: 30}} className="me-3 cursor-pointer"alt="" srcset="" />
-            <img src={Instagram} style={{width : 30, height: 30}} className="me-3 cursor-pointer"alt="" srcset="" />
-            <img src={Twitter} style={{width : 30, height: 30}} className="me-3 cursor-pointer"alt="" srcset="" />
-            <img src={LinkedIn} style={{width : 30, height: 30}} className="me-3 cursor-pointer"alt="" srcset="" />
+            <FacebookSvg className="ms-[10px] cursor-pointer" color={"white"} size={30} srcset="" />
+            <InstagramSvg className="ms-[10px] cursor-pointer" color={"white"} size={30} srcset="" />
+            <TwitterSvg className="ms-[10px] cursor-pointer" color={"white"} size={30} srcset="" />
+            <LinkedInSvg className="ms-[10px] cursor-pointer" color={"white"} size={30} srcset="" />
           </div>
         </div>
 
