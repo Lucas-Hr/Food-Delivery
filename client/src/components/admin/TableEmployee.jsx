@@ -15,7 +15,7 @@ import EditIcon from '../../assets/img/edit.png'
 import TrashIcon from '../../assets/img/trash.png'
 
 
-const TableEmployee = ({header,employees,deleteEmployee}) => {
+const TableEmployee = ({header,employees,deleteEmployee,setIsVisible}) => {
   return (
 <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -41,16 +41,21 @@ const TableEmployee = ({header,employees,deleteEmployee}) => {
               <TableCell align="left">{e.Name}</TableCell>
               <TableCell align="left">{e.Job}</TableCell>
               <TableCell>
-                {e.SocialMedia?.Facebook && (<FacebookSvg color={"black"} size={20}/>)}
-                {e.SocialMedia?.Instagram && (<InstagramSvg color={"black"} size={20}/>)}
-                {e.SocialMedia?.LinkedIn && (<LinkedInSvg color={"black"} size={20}/>)}
-                {e.SocialMedia?.X && (<TwitterSvg color={"black"} size={20}/>)}
+                <div className='flex items-center justify-between'>
+                  {e.SocialMedia?.Facebook && (<FacebookSvg color={"black"} size={20}/>)}
+                  {e.SocialMedia?.Instagram && (<InstagramSvg color={"black"} size={20}/>)}
+                  {e.SocialMedia?.LinkedIn && (<LinkedInSvg color={"black"} size={20}/>)}
+                  {e.SocialMedia?.X && (<TwitterSvg color={"black"} size={20}/>)}
+                </div>
+                
               </TableCell>
               <TableCell align="left">{e.Address}</TableCell>
               <TableCell align="left">{e.Phone}</TableCell>
-              <TableCell align="left" className='flex'>
-                <img src={EditIcon} alt="" className='w-8 h-8' />
-                <img src={TrashIcon} alt="" className='w-4 h-4 ms-2 cursor-pointer'onClick={() => deleteEmployee(e)}/>
+              <TableCell align="left">
+                <div className='flex items-center'>
+                  <img src={EditIcon} alt="" className='w-8 h-8 cursor-pointer' onClick={() => setIsVisible(true)}/>
+                  <img src={TrashIcon} alt="" className='w-4 h-4 ms-2 cursor-pointer' onClick={() => deleteEmployee(e)}/>
+                </div>
               </TableCell>
               
             </TableRow>
