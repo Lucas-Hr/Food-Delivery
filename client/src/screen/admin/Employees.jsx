@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import TableEmployee from '../../components/admin/TableEmployee'
+import EditEmployee from '../../components/admin/EditEmployee'
 const Employee = () => {
   const EmployeeHeader = ["Id","Name","Job","Social Media","Address","Phone","Action"]
   const [employees, setEmployees] = useState([
@@ -43,16 +44,18 @@ const Employee = () => {
       "Phone" : "+26 448 312 41"  
     }
   ])
+  const [isVisible, setIsVisible] = useState(false);
   const deleteEmployee = (employeeToDelete) => {
     const newEmployees = employees.filter(e => e !== employeeToDelete);
     setEmployees(newEmployees);
   }
   return (
     <div className='bg-[#F2F2F2] w-full px-8 py-4'>
+      {isVisible && <EditEmployee setIsVisible={setIsVisible}/>}
       <h1 className='text-[#464255] text-2xl font-semibold'>Employee</h1>
       <h3 className='text-[#A3A3A3]'>Welcome back to DeliverEats admin!</h3>
       <div className='mt-10'>
-        <TableEmployee header={EmployeeHeader} employees={employees} deleteEmployee={deleteEmployee}/>
+        <TableEmployee header={EmployeeHeader} employees={employees} deleteEmployee={deleteEmployee} setIsVisible={setIsVisible}/>
       </div>
     </div>
   )
