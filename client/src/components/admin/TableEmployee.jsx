@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -15,9 +15,9 @@ import EditIcon from '../../assets/img/edit.png'
 import TrashIcon from '../../assets/img/trash.png'
 
 
-const TableAdmin = ({header,rows}) => {
+const TableEmployee = ({header,employees,deleteEmployee}) => {
   return (
-    <TableContainer component={Paper}>
+<TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -32,34 +32,27 @@ const TableAdmin = ({header,rows}) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row,index) => (
+          {employees.map((e,index) => (
             <TableRow
               key={index}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              {header.map((h,index) => (
-                <TableCell key={index} align='left'>
-                  {h === "Social Media"  ? (
-                  <div className='flex justfy-between'>
-                    {Object.entries(row[h]).map(([platform, link]) => (
-                        <Link to={link}>
-                          {platform === "Facebook" && <FacebookSvg color={"black"} size={20}/>}
-                          {platform === "Instagram" && <InstagramSvg color={"black"} size={20}/>}
-                          {platform === "X" && <TwitterSvg color={"black"} size={20}/>}
-                          {platform === "LinkedIn" && <LinkedInSvg color={"black"} size={20}/>}
-                        </Link>                      
-                    ))}
-                  </div>
-                ) : 
-                
-                h === "Action" ? (
-                <div className='flex items-center'>
-                  <img src={EditIcon} className='w-8 h-8'/>
-                  <img src={TrashIcon} className='w-6 h-6 ms-2' />
-                </div>
-              ) : (row[h])}
-                </TableCell>
-              ))}
+              <TableCell align="left">{e.Id}</TableCell>
+              <TableCell align="left">{e.Name}</TableCell>
+              <TableCell align="left">{e.Job}</TableCell>
+              <TableCell>
+                {e.SocialMedia?.Facebook && (<FacebookSvg color={"black"} size={20}/>)}
+                {e.SocialMedia?.Instagram && (<InstagramSvg color={"black"} size={20}/>)}
+                {e.SocialMedia?.LinkedIn && (<LinkedInSvg color={"black"} size={20}/>)}
+                {e.SocialMedia?.X && (<TwitterSvg color={"black"} size={20}/>)}
+              </TableCell>
+              <TableCell align="left">{e.Address}</TableCell>
+              <TableCell align="left">{e.Phone}</TableCell>
+              <TableCell align="left" className='flex'>
+                <img src={EditIcon} alt="" className='w-8 h-8' />
+                <img src={TrashIcon} alt="" className='w-4 h-4 ms-2 cursor-pointer'onClick={() => deleteEmployee(e)}/>
+              </TableCell>
+              
             </TableRow>
           ))}
         </TableBody>
@@ -68,4 +61,5 @@ const TableAdmin = ({header,rows}) => {
   )
 }
 
-export default TableAdmin
+
+export default TableEmployee;
