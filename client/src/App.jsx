@@ -14,31 +14,31 @@ import { AddedProvider } from './components/context/AddedContext'
 import SideNav from './components/admin/SideNav';
 const App = () => {
   return (
-    <CartProvider>
-      <AddedProvider>
-        <QuantityProvider>
-          <BrowserRouter>
-            <NavigationBar />
+    // <CartProvider>
+    //   <AddedProvider>
+    //     <QuantityProvider>
+    //       <BrowserRouter>
+    //         <NavigationBar />
+    //         <Routes>
+    //           <Route path='/' element={<Accueil />}></Route>
+    //           <Route path='/menu' element={<Menu />}></Route>
+    //           <Route path='/cart' element={<Cart />}></Route>
+    //         </Routes>
+    //       </BrowserRouter>
+    //     </QuantityProvider>
+    //   </AddedProvider>
+    // </CartProvider>
+      <BrowserRouter>
+        <div className='flex'>
+          <SideNav />
             <Routes>
-              <Route path='/' element={<Accueil />}></Route>
-              <Route path='/menu' element={<Menu />}></Route>
-              <Route path='/cart' element={<Cart />}></Route>
+              <Route path='/' element={<Dashboard />}></Route>
+              <Route path='/orderlist' element={<OrderList />}></Route>
+              <Route path='/menuadmin' element={<MenuAdmin />}></Route>
+              <Route path='/employees' element={<Employees />}></Route>
             </Routes>
-          </BrowserRouter>
-        </QuantityProvider>
-      </AddedProvider>
-    </CartProvider>
-      // <BrowserRouter>
-      //   <div className='flex'>
-      //     <SideNav />
-      //       <Routes>
-      //         <Route path='/' element={<Dashboard />}></Route>
-      //         <Route path='/orderlist' element={<OrderList />}></Route>
-      //         <Route path='/menuadmin' element={<MenuAdmin />}></Route>
-      //         <Route path='/employees' element={<Employees />}></Route>
-      //       </Routes>
-      //   </div>
-      // </BrowserRouter>
+        </div>
+      </BrowserRouter>
   )
 }
 
