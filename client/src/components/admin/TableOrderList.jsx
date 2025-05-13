@@ -15,7 +15,7 @@ import EditIcon from '../../assets/img/edit.png'
 import TrashIcon from '../../assets/img/trash.png'
 
 
-const TableAdmin = ({header,rows}) => {
+const TableOrderList = ({header,orders}) => {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -32,34 +32,22 @@ const TableAdmin = ({header,rows}) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row,index) => (
+          {orders.map((o,index) => (
             <TableRow
               key={index}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              {header.map((h,index) => (
-                <TableCell key={index} align='left'>
-                  {h === "Social Media"  ? (
-                  <div className='flex justfy-between'>
-                    {Object.entries(row[h]).map(([platform, link]) => (
-                        <Link to={link}>
-                          {platform === "Facebook" && <FacebookSvg color={"black"} size={20}/>}
-                          {platform === "Instagram" && <InstagramSvg color={"black"} size={20}/>}
-                          {platform === "X" && <TwitterSvg color={"black"} size={20}/>}
-                          {platform === "LinkedIn" && <LinkedInSvg color={"black"} size={20}/>}
-                        </Link>                      
-                    ))}
-                  </div>
-                ) : 
-                
-                h === "Action" ? (
-                <div className='flex items-center'>
-                  <img src={EditIcon} className='w-8 h-8'/>
-                  <img src={TrashIcon} className='w-6 h-6 ms-2' />
+              <TableCell align='left'>{o.Id}</TableCell>
+              <TableCell align='left'>{o.Food}</TableCell>
+              <TableCell align='left'>{o.Quantity}</TableCell>
+              <TableCell align='left'>{o.Name}</TableCell>
+              <TableCell align='left'>{o.Address}</TableCell>
+              <TableCell align='left'>{o.Email}</TableCell>
+              <TableCell align='left' >
+                <div className={o.Status === "Pending" ? 'bg-[#FFFBB9] text-warning text-center py-2 rounded' : o.Status === "Delivered" ? 'bg-[#D2EBDB] text-success text-center py-2 rounded' :  'bg-[#ffcdb1] text-[red] text-center py-2 rounded' }>
+                  {o.Status}
                 </div>
-              ) : (row[h])}
-                </TableCell>
-              ))}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -68,4 +56,4 @@ const TableAdmin = ({header,rows}) => {
   )
 }
 
-export default TableAdmin
+export default TableOrderList
